@@ -55,8 +55,8 @@ public class DeleteMessageByMessageIdTest {
                 .build();
         HttpResponse<String> response = webClient.send(request, HttpResponse.BodyHandlers.ofString());
         int status = response.statusCode();
-        Assertions.assertEquals(200, status, "Expected Status Code 200 - Actual Code was: " + status);
-        Integer actualResult = objectMapper.readValue(response.body().toString(), Integer.class);
+        Assertions.assertEquals(200, status, "Expected Status Code 200 - Act        ual Code was: " + status);
+Integer actualResult = objectMapper.readValue(response.body().toString(), Integer.class);
         Assertions.assertTrue(actualResult.equals(1), "Expected to modify 1 row, but actually modified " + actualResult + " rows.");
     }
 
